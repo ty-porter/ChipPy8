@@ -498,6 +498,15 @@ class CPU:
     def delay(self):
         sleep(DELAY_TIME_MS / 1000.0)
 
+    def decrement_timers(self):
+        '''
+        Decrement the delay and sound timers.
+        '''
+
+        for timer in self.timers.keys():
+            if self.timers[timer] != 0:
+                self.timers[timer] -= 1
+
     def __str__(self):
         val = 'PC: {:4X}  OP: {:4X}\n'.format(
             self.registers['pc'] - 2, self.operand)

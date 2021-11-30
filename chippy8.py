@@ -16,6 +16,7 @@ def run():
     while True:
         chippy.delay()
         chippy.execute_instruction()
+        chippy.decrement_timers()
 
 if __name__ == '__main__':
     screen = Screen()
